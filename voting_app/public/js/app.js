@@ -15,7 +15,7 @@ class ProductList extends React.Component {
     products: [],
     order:true,
   };
-  
+
   //Act
   componentDidMount() {
     this.setState({ products: Seed.products });
@@ -79,6 +79,7 @@ class ProductList extends React.Component {
     //));
 
     const productComponents = products.map((product) => (
+
       <Product
         key={'product-' + product.id}
         id={product.id}
