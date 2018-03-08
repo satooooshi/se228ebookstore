@@ -10,6 +10,8 @@ var chai = require('chai'),
 chai.use(require("sinon-chai"));
 chai.use(require("chai-as-promised"));
 
+
+
 describe('Customer displays order', function () {
   beforeEach(function () {
     this.orderStorage = newStorage();
@@ -54,10 +56,13 @@ describe('Customer displays order', function () {
     });
   });
 
+
+
   function scenarioOrderContainsBeverages(testExample) {
     context('Given that the order contains ' + testExample.title, function () {
       beforeEach(function () {
         this.order = this.orderStorage.alreadyContains(order.withItems(testExample.items));
+          console.log(this.order);
         this.messages = this.messageStorage.alreadyContains({
           id: this.order.id,
           data: []
@@ -102,6 +107,8 @@ describe('Customer displays order', function () {
     });
   }
 
+
+
   [
     {
       title: '1 Expresso and 2 Mocaccino',
@@ -121,6 +128,10 @@ describe('Customer displays order', function () {
       expectedTotalPrice: 7.30
     }
   ].forEach(scenarioOrderContainsBeverages);
+
+
+
+
 
   function scenarioOrderHasPendingMessages(testExample) {
     context('Given that the order has pending the following messages: ' + testExample.title, function () {
@@ -149,6 +160,8 @@ describe('Customer displays order', function () {
       });
     });
   }
+
+
 
   [
     {
