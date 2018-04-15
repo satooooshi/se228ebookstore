@@ -114,6 +114,9 @@ class AppNav extends React.Component<Props, State> {
                     <NavItem>
                         <NavLink><Link to="/contact">Contact</Link></NavLink>
                     </NavItem>
+                    <NavItem>
+                        <NavLink><Link to="/cart">Cart</Link></NavLink>
+                    </NavItem>
                     {this.authLink(signedIn)}
                 </Nav>
             </Navbar>
